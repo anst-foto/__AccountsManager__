@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:windows="clr-namespace:AccountsManager.Windows"
+        xmlns:c="using:AccountsManager.Components"
+
+        x:Class="AccountsManager.Windows.AuthWindow"
+        x:DataType="{x:Type TypeName=windows:AuthWindow}">
+    <Window.Title>
+        <MultiBinding StringFormat="{}{0}. {1}">
+            <Binding Source="{StaticResource ResourceKey=Title}" />
+            <Binding Source="{StaticResource ResourceKey=Title_AuthWindow}" />
+        </MultiBinding>
+    </Window.Title>
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="{Binding Source={StaticResource ResourceKey=Title_AuthWindow}}" />
+
+        <StackPanel Orientation="Vertical">
+            <!--<StackPanel Orientation="Horizontal">
+                <Label Target="{Binding ElementName=Input_Login}"
+                       Content="Логин"/>
+                <TextBox x:Name="Input_Login"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Target="{Binding ElementName=Input_Password}"
+                       Content="Пароль"/>
+                <TextBox x:Name="Input_Password"/>
+            </StackPanel>-->
+            <c:InputComponent x:Name="Input_Login"
+                              Label="Логин" />
+            <c:InputComponent x:Name="Input_Password"
+                              Label="Пароль" />
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Войти"
+                        Click="Button_Auth_OnClick" />
+                <Button Content="Отмена"
+                        Click="Button_Cancel_OnClick" />
+            </StackPanel>
+
+            <!--<TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="Login:{0}, Password:{1}">
+                        <Binding ElementName="Input_Login"
+                                 Path="Value"
+                                 Mode="OneWay"
+                                 UpdateSourceTrigger="PropertyChanged" />
+                        <Binding ElementName="Input_Password"
+                                 Path="Value"
+                                 Mode="OneWay"
+                                 UpdateSourceTrigger="PropertyChanged" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>-->
+        </StackPanel>
+    </StackPanel>
+</Window>

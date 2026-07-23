@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace AccountsManager;
+namespace AccountsManager.Windows;
 
 public partial class MainWindow : Window
 {

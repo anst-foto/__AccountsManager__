@@ -1,7 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
-namespace AccountsManager;
+namespace AccountsManager.Windows;
 
 public partial class AuthWindow : Window
 {
@@ -12,7 +12,7 @@ public partial class AuthWindow : Window
 
     private void Button_Auth_OnClick(object? sender, RoutedEventArgs e)
     {
-        var mainWindow = new MainWindow();
+        var mainWindow = new Windows.MainWindow();
         mainWindow.Show();
         
         this.Close();

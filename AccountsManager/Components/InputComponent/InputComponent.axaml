@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+             x:Class="AccountsManager.Components.InputComponent"
+             x:Name="Component">
+             
+    <UserControl.Styles>
+        <StyleInclude Source="InputComponentStyles.axaml"/>
+    </UserControl.Styles>
+             
+    <Grid ColumnDefinitions="*, 3*"
+          DataContext="{Binding ElementName=Component}">
+        <Label Target="{Binding ElementName=Input}"
+               Content="{Binding Path=Label, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+               Grid.Column="0"/>
+        <TextBox x:Name="Input"
+                 Text="{Binding Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Column="1"/>
+    </Grid>
+</UserControl>

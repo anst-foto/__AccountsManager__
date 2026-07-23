@@ -1,22 +1,23 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:AccountsManager"
+        xmlns:windows="clr-namespace:AccountsManager.Windows"
+        xmlns:c="using:AccountsManager.Components"
 
-        x:Class="AccountsManager.MainWindow"
-        x:DataType="{x:Type TypeName=local:MainWindow}">
+        x:Class="AccountsManager.Windows.MainWindow"
+        x:DataType="{x:Type TypeName=windows:MainWindow}">
     <Window.Title>
         <MultiBinding StringFormat="{}{0}. {1}">
             <Binding Source="{StaticResource ResourceKey=Title}" />
             <Binding Source="{StaticResource ResourceKey=Title_MainWindow}" />
         </MultiBinding>
     </Window.Title>
-    
+
     <Grid ColumnDefinitions="*, 3*">
-        <ListBox Grid.Column="0"/>
-        
+        <ListBox Grid.Column="0" />
+
         <StackPanel Orientation="Vertical"
                     Grid.Column="1">
-            <StackPanel Orientation="Horizontal">
+            <!--<StackPanel Orientation="Horizontal">
                 <Label Target="{Binding ElementName=Input_Id}"
                        Content="ID"/>
                 <TextBox x:Name="Input_Id"
@@ -33,8 +34,14 @@
                 <Label Target="{Binding ElementName=Input_FirstName}"
                        Content="Имя"/>
                 <TextBox x:Name="Input_FirstName"/>
-            </StackPanel>
-            
+            </StackPanel>-->
+            <c:InputComponent x:Name="Input_Id"
+                              Label="ID" />
+            <c:InputComponent x:Name="Input_LastName"
+                              Label="Фамилия" />
+            <c:InputComponent x:Name="Input_FirstName"
+                              Label="Имя" />
+
             <StackPanel Orientation="Horizontal">
                 <Button Content="Сохранить" />
                 <Button Content="Очистить" />
