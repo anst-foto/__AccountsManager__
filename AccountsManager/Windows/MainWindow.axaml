@@ -36,7 +36,8 @@
                 <TextBox x:Name="Input_FirstName"/>
             </StackPanel>-->
             <c:InputComponent x:Name="Input_Id"
-                              Label="ID" />
+                              Label="ID"
+                               IsReadOnly="True"/>
             <c:InputComponent x:Name="Input_LastName"
                               Label="Фамилия" />
             <c:InputComponent x:Name="Input_FirstName"

@@ -27,9 +27,11 @@
                 <TextBox x:Name="Input_Password"/>
             </StackPanel>-->
             <c:InputComponent x:Name="Input_Login"
-                              Label="Логин" />
+                              Label="Логин"
+                              Placeholder="Введите логин"/>
             <c:InputComponent x:Name="Input_Password"
-                              Label="Пароль" />
+                              Label="Пароль"
+                              Placeholder="Введите пароль"/>
 
             <StackPanel Orientation="Horizontal">
                 <Button Content="Войти"
