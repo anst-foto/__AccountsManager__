@@ -1,0 +1,25 @@
+using Avalonia.Controls;
+using Avalonia.Interactivity;
+
+namespace AccountsManager;
+
+public partial class AuthWindow : Window
+{
+    public AuthWindow()
+    {
+        InitializeComponent();
+    }
+
+    private void Button_Auth_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var mainWindow = new MainWindow();
+        mainWindow.Show();
+        
+        this.Close();
+    }
+
+    private void Button_Cancel_OnClick(object? sender, RoutedEventArgs e)
+    {
+        this.Close();
+    }
+}

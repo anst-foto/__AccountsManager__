@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/others/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+  </Folder>
+  <Project Path="AccountsManager/AccountsManager.csproj" />
+</Solution>

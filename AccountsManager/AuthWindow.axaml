@@ -1,0 +1,37 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:AccountsManager"
+        
+        x:Class="AccountsManager.AuthWindow"
+        x:DataType="{x:Type TypeName=local:AuthWindow}">
+    <Window.Title>
+        <MultiBinding StringFormat="{}{0}. {1}">
+            <Binding Source="{StaticResource ResourceKey=Title}"/>
+            <Binding Source="{StaticResource ResourceKey=Title_AuthWindow}"/>
+        </MultiBinding>
+    </Window.Title>
+    
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="{Binding Source={StaticResource ResourceKey=Title_AuthWindow}}"/>
+        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label Target="{Binding ElementName=Input_Login}"
+                       Content="Логин"/>
+                <TextBox x:Name="Input_Login"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Target="{Binding ElementName=Input_Password}"
+                       Content="Пароль"/>
+                <TextBox x:Name="Input_Password"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Войти"
+                        Click="Button_Auth_OnClick" />
+                <Button Content="Отмена"
+                        Click="Button_Cancel_OnClick" />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>
